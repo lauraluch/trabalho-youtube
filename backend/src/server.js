@@ -1,5 +1,11 @@
 const express = require('express');
 const YouTube = require('youtube-node');
+const cors = require('cors');
+
+app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000']
+}));
 
 const app = express();
 const youtube = new YouTube();
