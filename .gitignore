@@ -1,0 +1,32 @@
+# Ignorar arquivos e diretórios gerados pelo Node.js
+node_modules/
+
+# Ignorar arquivos e diretórios gerados pelo TypeScript
+*.js
+*.js.map
+*.d.ts
+
+# Ignorar arquivos e diretórios gerados pelo Visual Studio Code
+.vscode/
+
+# Ignorar arquivos de build da aplicação React
+/build/
+/dist/
+
+# Ignorar arquivos de configuração específicos do ambiente
+.env
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de dependências do backend
+backend/node_modules/
+
+# Ignorar arquivos de build do backend
+backend/build/
+
+# Ignorar arquivos de dependências do frontend/app
+frontend/app/node_modules/
+
+# Ignorar arquivos de build do frontend/app
+frontend/app/build/
