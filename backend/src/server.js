@@ -2,13 +2,14 @@ const express = require('express');
 const YouTube = require('youtube-node');
 const cors = require('cors');
 
+
+const app = express();
+const youtube = new YouTube();
+
 app.use(cors());
 app.use(cors({
   origin: ['http://localhost:3000']
 }));
-
-const app = express();
-const youtube = new YouTube();
 
 youtube.setKey('AIzaSyD_5etwHij1lDq7TrJXhTVOhQEdfV_KaV0');
 
