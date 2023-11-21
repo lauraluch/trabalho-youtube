@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import GetPlaylist from './components/GetPlaylist/GetPlaylist';
+import { useState } from 'react';
+import CardsList from './components/ListCards/CardsList';
+import { json } from 'stream/consumers';
+
 
 function App() {
+
+  const [playlistData, setPlaylistData] = useState()
+
+  const handlePlaylistSearch = async (id: string) => {
+    try {
+      const response = await axios.get(`http://localhost:3005/playlist/${id}`);
+      
+      if (response.data.message != 'Erro ao obter informações da playlist.') {
+        setPlaylistData(response.data.items)
+        console.log(playlistData)
+      } else {
+        alert('Erro ao obter informações da playlist');
+        setPlaylistData(undefined)
+      }
+    } catch (error) {
+      console.error('Erro na requisição POST:', error);
+      setPlaylistData(undefined)
+      alert('Erro na requisição POST!');
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GetPlaylist onPlaylistSearch={handlePlaylistSearch}/>
+      {playlistData ?
+        <CardsList playlistData={playlistData}/> :
+        <></>}
     </div>
   );
 }
