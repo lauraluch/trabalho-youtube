@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FormContainer, Label, Input, Button} from "./styles";
+
 interface GetPlaylistProps {
     onPlaylistSearch: (playlistId: string) => void;
 }
@@ -22,19 +24,19 @@ const GetPlaylist: React.FC<GetPlaylistProps> = ({ onPlaylistSearch }) => {
   };
 
   return (
-    <div>
-      <label>
+    <FormContainer>
+      <Label>
         Id da playlist:
-        <input
+        <Input
           type="text"
           value={playlistId}
           onChange={(e) => setPlaylistId(e.target.value)}
         />
-      </label>
-      <button onClick={handleSavePlanet} disabled={isLoading}>
+      </Label>
+      <Button onClick={handleSavePlanet} disabled={isLoading}>
         {isLoading ? 'Carregando...' : buttonText}
-      </button>
-    </div>
+      </Button>
+    </FormContainer>
   );
 };
 
