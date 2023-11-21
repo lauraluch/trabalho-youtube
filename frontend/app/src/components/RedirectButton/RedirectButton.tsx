@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { StyledButton } from "./styles";
 
 interface ButtonProps {
     url: string;
@@ -14,9 +15,9 @@ const RedirectButton: FC<ButtonProps> = ({ url }) => {
   }
 
 return (
-    <button onClick={redirectToUrl}>
-        Assistir
-    </button>
+    <StyledButton onClick={redirectToUrl}>
+        Assistir ▶
+    </StyledButton>
 );
   
 }
