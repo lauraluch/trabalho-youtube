@@ -1,9 +1,8 @@
-import './App.css';
 import axios from 'axios';
 import GetPlaylist from './components/GetPlaylist/GetPlaylist';
 import { useState } from 'react';
 import CardsList from './components/CardsList/CardsList';
-
+import { Container, TitleContainer } from "./styles";
 
 function App() {
 
@@ -28,12 +27,20 @@ function App() {
   };
 
   return (
-    <div>
+    <Container>
+      <TitleContainer>
+        <h1>Playlists do</h1>
+
+        <img style={{
+          height: '4rem'
+        }} draggable={'false'} src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png'/>
+      </TitleContainer>
+
       <GetPlaylist onPlaylistSearch={handlePlaylistSearch}/>
       {playlistData ?
         <CardsList playlistData={playlistData}/> :
         <></>}
-    </div>
+    </Container>
   );
 }
 
