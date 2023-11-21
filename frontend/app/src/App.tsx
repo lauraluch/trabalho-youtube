@@ -2,7 +2,7 @@ import axios from 'axios';
 import GetPlaylist from './components/GetPlaylist/GetPlaylist';
 import { useState } from 'react';
 import CardsList from './components/CardsList/CardsList';
-import { Container, TitleContainer } from "./styles";
+import { Container, Description, TitleContainer } from "./styles";
 
 function App() {
 
@@ -36,6 +36,8 @@ function App() {
         }} draggable={'false'} src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png'/>
       </TitleContainer>
 
+      <Description>Acesse os itens da playlist que desejar digitando seu ID abaixo:</Description>
+      
       <GetPlaylist onPlaylistSearch={handlePlaylistSearch}/>
       {playlistData ?
         <CardsList playlistData={playlistData}/> :

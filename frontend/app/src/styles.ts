@@ -9,3 +9,7 @@ export const TitleContainer = styled.div`
     align-items: center;
     gap: 0.5rem;
 `
+
+export const Description = styled.text`
+    font-size: 22px;
+`
