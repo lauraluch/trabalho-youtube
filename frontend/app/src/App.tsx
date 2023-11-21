@@ -3,7 +3,6 @@ import axios from 'axios';
 import GetPlaylist from './components/GetPlaylist/GetPlaylist';
 import { useState } from 'react';
 import CardsList from './components/ListCards/CardsList';
-import { json } from 'stream/consumers';
 
 
 function App() {
