@@ -2,7 +2,7 @@ import axios from 'axios';
 import GetPlaylist from './components/GetPlaylist/GetPlaylist';
 import { useState } from 'react';
 import CardsList from './components/CardsList/CardsList';
-import { Container, Description, TitleContainer } from "./styles";
+import { Container, Description, Header, TitleContainer } from "./styles";
 
 function App() {
 
@@ -28,15 +28,17 @@ function App() {
 
   return (
     <Container>
-      <TitleContainer>
-        <h1>Playlists do</h1>
+      <Header>
+        <TitleContainer>
+          <h1>Playlists do</h1>
 
-        <img style={{
-          height: '4rem'
-        }} draggable={'false'} src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png'/>
-      </TitleContainer>
+          <img style={{
+            height: '4rem'
+          }} draggable={'false'} src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png'/>
+        </TitleContainer>
 
-      <Description>Acesse os itens da playlist que desejar digitando seu ID abaixo:</Description>
+        <Description>Acesse os itens da playlist que desejar digitando seu ID abaixo:</Description>
+      </Header>
       
       <GetPlaylist onPlaylistSearch={handlePlaylistSearch}/>
       {playlistData ?
