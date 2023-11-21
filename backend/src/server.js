@@ -16,6 +16,10 @@ youtube.setKey('AIzaSyD_5etwHij1lDq7TrJXhTVOhQEdfV_KaV0');
 app.get('/playlist/:id', (req, res) => {
   const playlistId = req.params.id;
 
+  const maxResults = 100;
+
+  youtube.addParam('maxResults', maxResults);
+
   youtube.getPlayListsItemsById(playlistId, (error, result) => {
     if (error) {
       console.log(error);
