@@ -1,5 +1,6 @@
 import { FC, Key } from 'react';
 import Card from '../Card/Card';
+import { PlaylistContainer } from "./styles";
 
 interface CardsListProps {
   playlistData?: any[];
@@ -11,7 +12,7 @@ const CardsList: FC<CardsListProps> = ({ playlistData }) => {
     return (<></>)
   }
   return (
-    <div>
+    <PlaylistContainer>
       {playlistData.map((item: { id: Key | null | undefined; snippet: { title: string; thumbnails: { medium: { url: string; }; }; resourceId: { videoId: any; }; }; }) => (
         <Card
           key={item.id}
@@ -20,7 +21,7 @@ const CardsList: FC<CardsListProps> = ({ playlistData }) => {
           link={`https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`}
         />
       ))}
-    </div>
+    </PlaylistContainer>
   );
 };
 
