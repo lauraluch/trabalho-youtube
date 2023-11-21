@@ -2,7 +2,7 @@ import './App.css';
 import axios from 'axios';
 import GetPlaylist from './components/GetPlaylist/GetPlaylist';
 import { useState } from 'react';
-import CardsList from './components/ListCards/CardsList';
+import CardsList from './components/CardsList/CardsList';
 
 
 function App() {
