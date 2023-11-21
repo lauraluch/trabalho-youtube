@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import RedirectButton from '../RedirectButton/RedirectButton';
+import { Image, Title, CardContainer } from "./styles";
 
 interface CardProps {
   title: string;
@@ -11,11 +12,11 @@ const Card: FC<CardProps> = ({ title, imageUrl, link}) => {
 
 
   return (
-    <div>
-      <h2>{title}</h2>
-      <img src={imageUrl} alt='Thumbnail'/>
+    <CardContainer>
+      <Title>{title}</Title>
+      <Image src={imageUrl} alt='Thumbnail'/>
       <RedirectButton url={link}/>
-    </div>
+    </CardContainer>
   );
 };
 
